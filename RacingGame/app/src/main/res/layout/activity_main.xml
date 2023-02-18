@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity"
+        android:background="@drawable/background_image">
+
+
+    <ImageView
+            android:id="@+id/ivName"
+            android:layout_width="340dp"
+            android:layout_height="74dp"
+            android:contentDescription="Racing game"
+            app:layout_constraintVertical_chainStyle="spread"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/layout1"
+            android:background="#00000000"
+            app:srcCompat="@drawable/title_board"
+            android:scaleType="fitXY"
+            android:adjustViewBounds="true" app:layout_constraintHorizontal_bias="0.726"/>
+    <TextView
+            android:id="@+id/tvTotal"
+            android:layout_width="168dp"
+            android:layout_height="42dp"
+            android:text="1000000"
+            app:layout_constraintBottom_toTopOf="@+id/layout1"
+            app:layout_constraintEnd_toStartOf="@+id/ivName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintHorizontal_bias="0.271"
+            app:layout_constraintVertical_bias="0.513"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:background="@drawable/total_money_background"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="#2b7844"
+    />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivName"
+        app:layout_constraintBottom_toTopOf="@+id/layout2"
+        tools:layout_editor_absoluteY="39dp">
+
+        <ImageButton
+                android:id="@+id/btnBet1"
+                android:layout_width="70dp"
+                android:layout_height="40dp"
+                android:contentDescription="Bet button 1"
+                app:layout_constraintEnd_toStartOf="@+id/btnCancel1"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                app:layout_constraintStart_toStartOf="@+id/layout1"
+                app:layout_constraintTop_toTopOf="@+id/layout1"
+                android:background="#00000000"
+                app:srcCompat="@drawable/bet_button"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:outlineAmbientShadowColor="@color/black" app:layout_constraintVertical_bias="1.0"/>
+
+
+        <ImageButton
+                android:id="@+id/btnCancel1"
+                android:layout_width="70dp"
+                android:layout_height="40dp"
+                android:contentDescription="Cancel 1"
+                app:layout_constraintEnd_toStartOf="@+id/tvBet1"
+                app:layout_constraintStart_toEndOf="@+id/btnBet1"
+                app:layout_constraintTop_toTopOf="@+id/layout1"
+                android:background="#00000000"
+                app:srcCompat="@drawable/cancel_button"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+                android:id="@+id/tvBet1"
+                android:layout_width="120dp"
+                android:layout_height="39dp"
+                android:text="0"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/seekBar1"
+                app:layout_constraintStart_toEndOf="@+id/btnCancel1"
+                app:layout_constraintTop_toTopOf="@+id/layout1" app:layout_constraintVertical_bias="0.533"
+                android:background="@drawable/total_money_background"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="#2b7844"
+        />
+
+        <SeekBar
+                android:id="@+id/seekBar1"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:progressDrawable="@drawable/progress_back"
+                android:scaleType="fitXY"
+                android:thumb="@drawable/tiger_thumb"
+                android:splitTrack="false"
+                app:layout_constraintStart_toEndOf="@+id/tvBet1"
+                app:layout_constraintTop_toTopOf="@+id/layout1"
+                app:layout_constraintEnd_toStartOf="@+id/tvResult1"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+                android:id="@+id/tvResult1"
+                android:layout_marginStart="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.089"
+                app:layout_constraintStart_toEndOf="@+id/seekBar1"
+                app:layout_constraintTop_toTopOf="@+id/layout1"
+                android:layout_width="42dp"
+                android:layout_height="44dp"
+                android:background="@drawable/frame_button"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="#2b7844"
+                app:layout_constraintVertical_bias="0.0"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout1"
+        app:layout_constraintBottom_toTopOf="@+id/layout3"
+        tools:layout_editor_absoluteY="39dp">
+
+        <ImageButton
+                android:id="@+id/btnBet2"
+                android:layout_width="70dp"
+                android:layout_height="40dp"
+                android:contentDescription="Bet button 2"
+                app:layout_constraintEnd_toStartOf="@+id/btnCancel2"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                app:layout_constraintStart_toStartOf="@+id/layout2"
+                app:layout_constraintTop_toTopOf="@+id/layout2"
+                android:background="#00000000"
+                app:srcCompat="@drawable/bet_button"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true" app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <ImageButton
+                android:id="@+id/btnCancel2"
+                android:layout_width="70dp"
+                android:layout_height="40dp"
+                android:contentDescription="Cancel 2"
+                app:layout_constraintEnd_toStartOf="@+id/tvBet2"
+                app:layout_constraintStart_toEndOf="@+id/btnBet2"
+                app:layout_constraintTop_toTopOf="@+id/layout2"
+                android:background="#00000000"
+                app:srcCompat="@drawable/cancel_button"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true" app:layout_constraintBottom_toBottomOf="parent"/>
+        <TextView
+                android:id="@+id/tvBet2"
+                android:text="0"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/seekBar2"
+                app:layout_constraintStart_toEndOf="@+id/btnCancel2"
+                app:layout_constraintTop_toTopOf="@+id/layout2"
+                android:background="@drawable/total_money_background"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="#2b7844"
+                android:layout_width="120dp"
+                android:layout_height="39dp"/>
+
+        <SeekBar
+                android:id="@+id/seekBar2"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:progressDrawable="@drawable/progress_back"
+                android:scaleType="fitXY"
+                android:thumb="@drawable/rhino_thumb"
+                android:splitTrack="false"
+                app:layout_constraintStart_toEndOf="@+id/tvBet2"
+                app:layout_constraintTop_toTopOf="@+id/layout2"
+                app:layout_constraintEnd_toStartOf="@+id/tvResult2"
+                android:layout_marginTop="4dp"/>
+        <TextView
+                android:id="@+id/tvResult2"
+                android:layout_marginStart="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.089"
+                app:layout_constraintStart_toEndOf="@+id/seekBar2"
+                app:layout_constraintTop_toTopOf="@+id/layout2"
+                android:layout_width="42dp"
+                android:layout_height="44dp"
+                android:background="@drawable/frame_button"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="#2b7844"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout2"
+        app:layout_constraintBottom_toTopOf="@+id/layout4"
+        tools:layout_editor_absoluteY="39dp">
+
+        <ImageButton
+                android:id="@+id/btnBet3"
+                android:layout_width="70dp"
+                android:layout_height="40dp"
+                android:contentDescription="Bet button 3"
+                app:layout_constraintEnd_toStartOf="@+id/btnCancel3"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                app:layout_constraintStart_toStartOf="@+id/layout3"
+                app:layout_constraintTop_toTopOf="@+id/layout3"
+                android:background="#00000000"
+                app:srcCompat="@drawable/bet_button"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true" app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <ImageButton
+                android:id="@+id/btnCancel3"
+                android:layout_width="70dp"
+                android:layout_height="40dp"
+                android:contentDescription="Cancel 3"
+                app:layout_constraintEnd_toStartOf="@+id/tvBet3"
+                app:layout_constraintStart_toEndOf="@+id/btnBet3"
+                app:layout_constraintTop_toTopOf="@+id/layout3"
+                android:background="#00000000"
+                app:srcCompat="@drawable/cancel_button"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true" app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+                android:id="@+id/tvBet3"
+                android:text="0"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/seekBar3"
+                app:layout_constraintStart_toEndOf="@+id/btnCancel3"
+                app:layout_constraintTop_toTopOf="@+id/layout3"
+                android:background="@drawable/total_money_background"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="#2b7844"
+                android:layout_width="120dp"
+                android:layout_height="39dp"/>
+
+        <SeekBar
+                android:id="@+id/seekBar3"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:progressDrawable="@drawable/progress_back"
+                android:scaleType="fitXY"
+                android:thumb="@drawable/monkey_thumb"
+                android:splitTrack="false"
+                app:layout_constraintStart_toEndOf="@+id/tvBet3"
+                app:layout_constraintTop_toTopOf="@+id/layout3"
+                app:layout_constraintEnd_toStartOf="@+id/tvResult3"/>
+
+        <TextView
+                android:id="@+id/tvResult3"
+                android:layout_marginStart="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.089"
+                app:layout_constraintStart_toEndOf="@+id/seekBar3"
+                app:layout_constraintTop_toTopOf="@+id/layout3"
+                android:layout_width="42dp"
+                android:layout_height="44dp"
+                android:background="@drawable/frame_button"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="#2b7844"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout3"
+        app:layout_constraintBottom_toTopOf="@+id/startBtn"
+        tools:layout_editor_absoluteY="39dp">
+
+        <ImageButton
+                android:id="@+id/btnBet4"
+                android:layout_width="70dp"
+                android:layout_height="40dp"
+                android:contentDescription="Bet button 4"
+                app:layout_constraintEnd_toStartOf="@+id/btnCancel4"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                app:layout_constraintStart_toStartOf="@+id/layout4"
+                app:layout_constraintTop_toTopOf="@+id/layout4"
+                android:background="#00000000"
+                app:srcCompat="@drawable/bet_button"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true" app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <ImageButton
+                android:id="@+id/btnCancel4"
+                android:layout_width="70dp"
+                android:layout_height="40dp"
+                android:contentDescription="Cancel 4"
+                app:layout_constraintEnd_toStartOf="@+id/tvBet4"
+                app:layout_constraintStart_toEndOf="@+id/btnBet4"
+                app:layout_constraintTop_toTopOf="@+id/layout4"
+                android:background="#00000000"
+                app:srcCompat="@drawable/cancel_button"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true" app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+                android:id="@+id/tvBet4"
+
+                android:text="0"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/seekBar4"
+                app:layout_constraintStart_toEndOf="@+id/btnCancel4"
+                app:layout_constraintTop_toTopOf="@+id/layout4"
+                android:background="@drawable/total_money_background"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="#2b7844"
+                android:layout_width="120dp"
+                android:layout_height="39dp"/>
+
+        <SeekBar
+                android:id="@+id/seekBar4"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:progressDrawable="@drawable/progress_back"
+                android:scaleType="fitXY"
+                android:thumb="@drawable/brown_monkey_thumb"
+                android:splitTrack="false"
+                app:layout_constraintStart_toEndOf="@+id/tvBet4"
+                app:layout_constraintTop_toTopOf="@+id/layout4"
+                app:layout_constraintEnd_toStartOf="@+id/tvResult4"/>
+
+        <TextView
+                android:id="@+id/tvResult4"
+
+                android:layout_marginStart="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.089"
+                app:layout_constraintStart_toEndOf="@+id/seekBar4"
+                app:layout_constraintTop_toTopOf="@+id/layout4"
+                android:layout_width="42dp"
+                android:layout_height="44dp"
+                android:background="@drawable/frame_button"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="#2b7844"
+        />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageButton
+            android:id="@+id/startBtn"
+            android:layout_width="120dp"
+            android:layout_height="70dp"
+            android:contentDescription="Start"
+            android:text="Start"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/resetBtn"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layout4"
+            android:background="#00000000"
+            app:srcCompat="@drawable/start_button"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"/>
+    <ImageButton
+            android:id="@+id/resetBtn"
+            android:layout_width="120dp"
+            android:layout_height="70dp"
+            android:contentDescription="Reset"
+            android:text="Reset"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/startBtn"
+            app:layout_constraintTop_toBottomOf="@+id/layout4"
+            android:background="#00000000"
+            app:srcCompat="@drawable/reset_button"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"/>
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/fire1"
+        android:layout_width="80dp"
+        android:layout_height="65dp"
+        app:layout_constraintBottom_toTopOf="@+id/layout1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.89"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/fire" />
+
+    <ImageView
+            android:id="@+id/fire01"
+            android:layout_width="80dp"
+            android:layout_height="65dp"
+            app:layout_constraintBottom_toTopOf="@+id/layout1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/fire"/>
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/fire2"
+        android:layout_width="80dp"
+        android:layout_height="65dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.89"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout4"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/fire" />
+    <ImageView
+            android:id="@+id/fire02"
+            android:layout_width="80dp"
+            android:layout_height="65dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.93"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layout4"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/fire"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
